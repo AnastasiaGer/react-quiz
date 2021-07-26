@@ -1,10 +1,10 @@
 import Layout from './hoc/Layout/Layout'
+import Quiz from './containers/Qiuz/Quiz'
+
 function App() {
   return (
     <Layout>
-      <div>
-        <h1>LLLL</h1>
-      </div>
+      <Quiz />
 
     </Layout>
   );

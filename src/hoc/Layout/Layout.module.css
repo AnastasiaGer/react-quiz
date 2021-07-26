@@ -1,5 +1,5 @@
 .Layout {
-  height: 1px vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
