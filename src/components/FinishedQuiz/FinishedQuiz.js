@@ -1,15 +1,15 @@
 import React from "react";
 import classes from "./FinishedQuiz.module.css";
-import Button from '../UI/Button/Button'
+import Button from "../UI/Button/Button";
+import { Link } from "react-router-dom";
 
 const FinishedQuiz = (props) => {
-const successCount = Object.keys(props.results).reduce((total, key) => {
-if(props.results[key] === 'success') {
-total++
-}
-return total
-
-},0)
+  const successCount = Object.keys(props.results).reduce((total, key) => {
+    if (props.results[key] === "success") {
+      total++;
+    }
+    return total;
+  }, 0);
 
   return (
     <div className={classes.FinishedQuiz}>
@@ -18,7 +18,7 @@ return total
           const cls = [
             "fa",
             props.results[quizItem.id] === "error" ? "fa-times" : "fa-check",
-            classes[props.results[quizItem.id]]
+            classes[props.results[quizItem.id]],
           ];
           return (
             <li key={index}>
@@ -29,10 +29,17 @@ return total
           );
         })}
       </ul>
-      <p>Right {successCount} from {props.quiz.length}</p>
+      <p>
+        Right {successCount} from {props.quiz.length}
+      </p>
       <div>
-        <Button onClick={props.onRetry} type='primary'>Repeat</Button>
-        <Button type='success'>Test List</Button>
+        <Button onClick={props.onRetry} type="primary">
+          Repeat
+        </Button>
+        <Link to="/">
+          {" "}
+          <Button type="success">Test List</Button>
+        </Link>
       </div>
     </div>
   );
