@@ -3,6 +3,8 @@ import classes from "./QuizCreator.module.css";
 import Button from "../../components/UI/Button/Button";
 
 export default class QuizCreator extends React.Component {
+
+  
   submitHandler(e) {
     e.preventDefault();
   }
